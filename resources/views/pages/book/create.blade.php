@@ -1,12 +1,12 @@
 @extends('layouts.app')
-@section('title', 'Tambah Data Buku')
+@section('title', 'Add Book Data')
 
 @section('content')
 <form action = "{{ route('buku.store') }}" method="POST" enctype="multipart/form-data">
 @csrf
 
   <div class="mb-3">
-    <label class="form-label">Judul Buku</label> 
+    <label class="form-label">Book Title</label> 
     <input type="text" class="form-control @error('title')
     is-invalid 
     @enderror"
@@ -19,7 +19,7 @@
   </div>
 
   <div class="mb-3">
-    <label class="form-label">Penulis</label> 
+    <label class="form-label">Author</label> 
     <input type="text" class="form-control @error('author')
     is-invalid 
     @enderror"
@@ -32,7 +32,7 @@
   </div>
 
   <div class="mb-3">
-    <label class="form-label">Penerbit</label> 
+    <label class="form-label">Book Publisher</label> 
     <input type="text" class="form-control @error('publisher')
     is-invalid 
     @enderror"
@@ -45,7 +45,7 @@
   </div>
 
   <div class="mb-3">
-    <label class="form-label">Tahun Penerbit</label> 
+    <label class="form-label">Published On</label> 
     <input type="text" class="form-control @error('date_of_issue')
     is-invalid 
     @enderror"
@@ -71,7 +71,7 @@
   </div>
 
   <div class="mb-3">
-    <label class="form-label">Cover Buku</label>
+    <label class="form-label">Book Cover</label>
     <input type="file" class="form-control @error('cover')
     is-invalid 
     @enderror"
@@ -84,7 +84,7 @@
   </div>
 
   <div class="mb-3">
-    <label class="form-label">Premis</label>
+    <label class="form-label">Premise</label>
     <textarea class="form-control @error('premis')
     is-invalid
     @enderror" 
@@ -102,7 +102,7 @@
     <select class="form-select @error('genre') 
     is-invalid
     @enderror" name="genre">
-        <option selected disabled>Pilih Genre</option>
+        <option selected disabled>Choose Genre</option>
         <option value="Novel">Romance</option>
         <option value="Komik">Fantasy</option> 
         <option value="Biografi">Science Fiction(Sci-Fi)</option>
@@ -110,15 +110,15 @@
         <option value="Majalah">Mystery</option>
         <option value="Biografi">Thriller</option>
         <option value="Ensiklopedia">Comedy</option>
-        <option value="Majalah">Sejarah</option>
-        <option value="Biografi">Psikologi</option>
-        <option value="Ensiklopedia">Saga atau Keluarga</option>
-        <option value="Majalah">Petualangan</option>
-        <option value="Lainnya">Lainnya</option> 
+        <option value="Majalah">History</option>
+        <option value="Biografi">Psychology</option>
+        <option value="Ensiklopedia">Saga or Family</option>
+        <option value="Majalah">Adventure</option>
+        <option value="Lainnya">Other</option> 
     </select>
   </div>
 
-  <button type="submit" class="btn btn-primary">Tambah Buku</button>
+  <button type="submit" class="btn btn-primary">Add Book Data</button>
 
 </form>
 @endsection

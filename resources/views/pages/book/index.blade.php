@@ -1,21 +1,21 @@
 @extends('layouts.app')
-@section('title', 'Data Buku')
+@section('title', 'Book Data')
 
 @section('content')
   <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Judul Buku</th>
-      <th scope="col">Penulis</th>
-      <th scope="col">Penerbit</th>
-      <th scope="col">Tahun Penerbit</th>
+      <th scope="col">Book Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Book Publisher</th>
+      <th scope="col">Published On</th>
       <th scope="col">ISBN</th>
-      <th scope="col">Cover</th>
-      <th scope="col">Premis</th>
+      <th scope="col">Cover Book</th>
+      <th scope="col">Premise</th>
       <th scope="col">Genre</th>
       @if(Auth::user()->role == 'admin')
-      <th scope="col">Aksi</th>
+      <th scope="col">Action</th>
       @endif
     </tr>
   </thead>
@@ -41,7 +41,7 @@
           @csrf
           @method('delete') 
           @if(Auth::user()->role == 'admin')
-          <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+          <button type="submit" class="btn btn-sm btn-danger">Delete</button>
           @endif
         </form>
       </td>
@@ -51,7 +51,7 @@
   </table>
   @if(Auth::user()->role == 'admin')
   <a href="{{ route('buku.create') }}">
-    <button class="btn btn-primary">Tambah Buku</button>
+    <button class="btn btn-primary">Add Data Book</button>
   </a>
   @endif
 @endsection

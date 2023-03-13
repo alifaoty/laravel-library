@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -16,8 +15,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Route::get('/', function () {
+	return view('welcome');
+});
+
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/', [DashboardController::class, 'index']) -> name('dashboard');
     Route::resource('buku', BookController::class);
 });
 
